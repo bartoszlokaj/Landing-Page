@@ -1,3 +1,9 @@
+$color-primary-light: #0FA5C8;
+$color-primary: #038FB0;
+$color-primary-dark: #026B84;
+
+$color-white: #fff;
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +12,40 @@
 
 body {
   font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 25px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-primary, .7), 
+    rgba($color-primary-light, .7)),
+    url(../img/forest-1.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 100%, 50% 96%, 0 100%);
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 15px;
 }
