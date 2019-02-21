@@ -1,17 +1,21 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: inherit; }
 
 html {
-  font-size: 10px; }
+  font-size: 62.5%; }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 2.5rem; }
+  padding: 2.5rem;
+  box-sizing: border-box; }
 
 .header {
   height: 95vh;
@@ -21,14 +25,16 @@ body {
   clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 100%, 50% 96%, 0 100%); }
   .header__text-box {
     position: absolute;
-    top: 40%;
+    top: 42%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
     font-size: 6rem;
@@ -42,6 +48,47 @@ body {
     font-weight: 700;
     letter-spacing: 2.2rem;
     animation: moveInTop 3s ease-out; }
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .15s;
+  position: relative;
+  animation: moveInBtn 3s ease-out; }
+  .btn:link:hover,
+  .btn:visited:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2); }
+  .btn:link:active,
+  .btn:visited:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.2); }
+  .btn:link::after,
+  .btn:visited::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn:link:hover::after,
+  .btn:visited:hover::after {
+    transform: scale(1.5);
+    opacity: 0; }
+
+.btn--white {
+  background-color: #fff;
+  color: #666; }
+  .btn--white::after {
+    background-color: #fff; }
 
 @keyframes fadeIn {
   0% {
@@ -61,13 +108,12 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  display: inline-block; }
-
-.btn--white {
-  background-color: #fff;
-  color: #666; }
+@keyframes moveInBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  50% {
+    transform: translateY(-0.5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }

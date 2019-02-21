@@ -6,23 +6,26 @@ $color-white: #fff;
 $color-gray: #666;
 $color-black: #000;
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  // font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
   padding: 2.5rem;
+  box-sizing: border-box;
 }
 
 .header {
@@ -38,9 +41,10 @@ body {
 
   &__text-box {
     position: absolute;
-    top: 40%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
 
@@ -49,6 +53,7 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden;
+  margin-bottom: 6rem;
 
   &--main {
     display: block;
@@ -68,37 +73,8 @@ body {
   
     animation: moveInTop 3s ease-out;
   }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    9% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes moveInTop {
-    0% {
-      opacity: 0;
-      transform: translateY(-10rem);
-    }
-
-    50% {
-      transform: translateY(.5rem);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
 }
+
 
 .btn:link,
 .btn:visited {
@@ -106,9 +82,96 @@ body {
   text-transform: uppercase;
   padding: 1.5rem 4rem;
   display: inline-block;
+  border-radius: 10rem;
+  transition: all .15s;
+  position: relative;
+  animation: moveInBtn 3s ease-out;
+
+  &:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 1.5rem rgba($color-black,.2);  
+  }
+
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .6rem .8rem rgba($color-black,.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }
+
 
 .btn--white {
   background-color: $color-white;
   color: $color-gray;
+
+  &::after {
+    background-color: $color-white;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    // transform: scaleX(1.1);
+  }
+
+  9% {
+    opacity: 0;
+    // transform: scaleX(1.1);
+
+  }
+
+  100% {
+    opacity: 1;
+    // transform: scaleX(1);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+
+  50% {
+    transform: translateY(.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  50% {
+    transform: translateY(-.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
