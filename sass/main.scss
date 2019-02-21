@@ -3,6 +3,8 @@ $color-primary: #038FB0;
 $color-primary-dark: #026B84;
 
 $color-white: #fff;
+$color-gray: #666;
+$color-black: #000;
 
 * {
   margin: 0;
@@ -10,13 +12,17 @@ $color-white: #fff;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  // font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 25px;
+  padding: 2.5rem;
 }
 
 .header {
@@ -46,9 +52,9 @@ body {
 
   &--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: fadeIn;
     animation-duration: 3.5s;
@@ -56,9 +62,9 @@ body {
 
   &--sub {
     display: block;
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 22px;
+    letter-spacing: 2.2rem;
   
     animation: moveInTop 3s ease-out;
   }
@@ -66,7 +72,6 @@ body {
   @keyframes fadeIn {
     0% {
       opacity: 0;
-      // transform: translateX(-100px);
     }
 
     9% {
@@ -75,18 +80,17 @@ body {
 
     100% {
       opacity: 1;
-      // transform: translate(0);
     }
   }
 
   @keyframes moveInTop {
     0% {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-10rem);
     }
 
     50% {
-      transform: translateY(5px);
+      transform: translateY(.5rem);
     }
 
     100% {
@@ -94,4 +98,17 @@ body {
       transform: translate(0);
     }
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+}
+
+.btn--white {
+  background-color: $color-white;
+  color: $color-gray;
 }
