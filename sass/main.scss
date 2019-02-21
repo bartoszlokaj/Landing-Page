@@ -23,11 +23,11 @@ body {
   height: 95vh;
   background-image: linear-gradient(
     to right bottom, 
-    rgba($color-primary, .7), 
-    rgba($color-primary-light, .7)),
-    url(../img/forest-1.jpg);
+    rgba($color-primary-light, .8), 
+    rgba($color-primary, .8)),
+    url(../img/hero-1.jpg);
   background-size: cover;
-  background-position: top;
+  background-position: center;
   clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 100%, 50% 96%, 0 100%);
 
   &__text-box {
@@ -42,6 +42,8 @@ body {
   color: $color-white;
   text-transform: uppercase;
 
+  backface-visibility: hidden;
+
   &--main {
     display: block;
     font-size: 60px;
@@ -49,7 +51,7 @@ body {
     letter-spacing: 35px;
 
     animation-name: fadeIn;
-    animation-duration: 3s;
+    animation-duration: 3.5s;
   }
 
   &--sub {
@@ -58,8 +60,7 @@ body {
     font-weight: 700;
     letter-spacing: 22px;
   
-    animation-name: moveInTop;
-    animation-duration: 3s;
+    animation: moveInTop 3s ease-out;
   }
 
   @keyframes fadeIn {
@@ -68,12 +69,8 @@ body {
       // transform: translateX(-100px);
     }
 
-    15% {
+    9% {
       opacity: 0;
-    }
-
-    80% {
-
     }
 
     100% {
