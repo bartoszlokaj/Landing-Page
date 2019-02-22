@@ -3,7 +3,7 @@ $color-primary: #038FB0;
 $color-primary-dark: #026B84;
 
 $color-white: #fff;
-$color-gray: #666;
+$color-gray-dark: #666;
 $color-black: #000;
 
 *,
@@ -23,7 +23,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
+  color: $color-gray-dark;
   padding: 2.5rem;
   box-sizing: border-box;
 }
@@ -34,7 +34,7 @@ body {
     to right bottom, 
     rgba($color-primary-light, .8), 
     rgba($color-primary, .8)),
-    url(../img/hero-1.jpg);
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 3%, 50% 0, 100% 3%, 100% 100%, 50% 96%, 0 100%);
@@ -61,15 +61,15 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
 
-    animation-name: fadeIn;
-    animation-duration: 3.5s;
+    animation: fadeIn 2.8s ease-in-out .5s;
+    animation-fill-mode: backwards;
   }
 
   &--sub {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 2.2rem;
+    letter-spacing: 2.22rem;
   
     animation: moveInTop 3s ease-out;
   }
@@ -85,7 +85,6 @@ body {
   border-radius: 10rem;
   transition: all .15s;
   position: relative;
-  animation: moveInBtn 3s ease-out;
 
   &:hover {
     transform: translateY(-.3rem);
@@ -119,23 +118,21 @@ body {
 
 .btn--white {
   background-color: $color-white;
-  color: $color-gray;
+  color: $color-gray-dark;
 
   &::after {
     background-color: $color-white;
   }
 }
 
+.btn--animated {
+  animation: moveFromBottom 3s ease-out;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
     // transform: scaleX(1.1);
-  }
-
-  9% {
-    opacity: 0;
-    // transform: scaleX(1.1);
-
   }
 
   100% {
@@ -160,7 +157,7 @@ body {
   }
 }
 
-@keyframes moveInBtn {
+@keyframes moveFromBottom {
   0% {
     opacity: 0;
     transform: translateY(10rem);

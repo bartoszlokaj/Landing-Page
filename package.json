@@ -7,8 +7,7 @@
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "repository": {
-    "type": "git",
-    "url": "~/Desktop/Projekty/Landing_page"
+    "type": "git"
   },
   "author": "Bartosz Lokaj",
   "license": "ISC",
