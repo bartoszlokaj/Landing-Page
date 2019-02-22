@@ -1,3 +1,14 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "pages/home";
+
 $color-primary-light: #0FA5C8;
 $color-primary: #038FB0;
 $color-primary-dark: #026B84;
@@ -75,20 +86,26 @@ body {
   }
 }
 
-
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .15s;
-  position: relative;
+.btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .15s;
+    position: relative;
+  }
 
   &:hover {
     transform: translateY(-.3rem);
     box-shadow: 0 1rem 1.5rem rgba($color-black,.2);  
+  
+    &::after {
+      transform: scale(1.5);
+      opacity: 0;
+    }
   }
 
   &:active {
@@ -109,25 +126,24 @@ body {
     transition: all .4s;
   }
 
-  &:hover::after {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
 
-
-.btn--white {
-  background-color: $color-white;
-  color: $color-gray-dark;
-
-  &::after {
+  &--white {
     background-color: $color-white;
+    color: $color-gray-dark;
+  
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveFromBottom 3s ease-out;
   }
 }
 
-.btn--animated {
-  animation: moveFromBottom 3s ease-out;
-}
+
+
+
 
 @keyframes fadeIn {
   0% {

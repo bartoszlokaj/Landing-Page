@@ -49,8 +49,7 @@ body {
     letter-spacing: 2.22rem;
     animation: moveInTop 3s ease-out; }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
@@ -58,30 +57,29 @@ body {
   border-radius: 10rem;
   transition: all .15s;
   position: relative; }
-  .btn:link:hover,
-  .btn:visited:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2); }
-  .btn:link:active,
-  .btn:visited:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.2); }
-  .btn:link::after,
-  .btn:visited::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s; }
-  .btn:link:hover::after,
-  .btn:visited:hover::after {
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
     transform: scale(1.5);
     opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
 .btn--white {
   background-color: #fff;
