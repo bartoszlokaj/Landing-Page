@@ -87,15 +87,24 @@ body {
     letter-spacing: 3.5rem;
     animation: fadeIn 2.8s ease-in-out .5s;
     animation-fill-mode: backwards; }
-    @media (max-width: 37.5em) {
+    @media (max-width: 56.25em) {
       .heading-primary--main {
         letter-spacing: 2rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 2.22rem;
     animation: moveInTop 3s ease-out; }
+    @media (max-width: 56.25em) {
+      .heading-primary--sub {
+        letter-spacing: 1rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .btn:link, .btn:visited {
   text-decoration: none;
