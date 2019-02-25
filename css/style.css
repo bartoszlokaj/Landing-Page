@@ -108,6 +108,28 @@ body {
       .heading-primary--sub {
         letter-spacing: .5rem; } }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #0FA5C8, #038FB0);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s;
+  text-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2); }
+  .heading-secondary:hover {
+    transform: scale(1.05) rotate(0.5deg) translateY(-0.6rem);
+    text-shadow: 0.5rem 0.8rem 3rem rgba(0, 0, 0, 0.3);
+    cursor: pointer; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
 .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -180,3 +202,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 10rem 0 25rem 0;
+  margin-top: -5vh; }

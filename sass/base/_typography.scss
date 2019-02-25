@@ -53,3 +53,22 @@ body {
     animation: moveInTop 3s ease-out;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s;
+  text-shadow: 0 .3rem 1rem rgba($color-black, .2);
+
+  &:hover {
+    transform: scale(1.05) rotate(.5deg) translateY(-.6rem);
+    text-shadow: .5rem .8rem 3rem rgba($color-black, .3);
+    cursor: pointer;
+  }
+}
