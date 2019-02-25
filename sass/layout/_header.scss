@@ -24,6 +24,11 @@
       top: 6rem;
       left: 7rem;
     }
+
+    @include respond(phone) {
+      top: 5rem;
+      left: 4rem;
+    }
   }
 
   &__logo {
