@@ -242,7 +242,9 @@ body {
 
 .row {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  max-width: 114rem;
+  margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row .col-1-of-2 {
