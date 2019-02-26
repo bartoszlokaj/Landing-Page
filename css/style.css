@@ -131,6 +131,9 @@ body {
 
 .paragraph {
   font-size: 1.6rem; }
+  @media (max-width: 37.5em) {
+    .paragraph {
+      font-size: 2rem; } }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
@@ -264,3 +267,5 @@ body {
   background-color: #f7f7f7;
   padding: 10rem 0 25rem 0;
   margin-top: -5vh; }
+  .section-about .about-content {
+    padding: 2rem; }

@@ -81,6 +81,9 @@ body {
 
 .paragraph {
   font-size: $default-font-size;
+  @include respond(phablet) {
+    font-size: $default-font-size-phablet;
+  }
 
   &:not(:last-child) {
     margin-bottom: 3rem;
